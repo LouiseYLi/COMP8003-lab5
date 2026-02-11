@@ -1,0 +1,6 @@
+/etc/passwd OPEN 
+/etc/passwd ACCESS 
+/etc/passwd CLOSE_NOWRITE,CLOSE 
+/etc/passwd OPEN 
+/etc/passwd ACCESS 
+/etc/passwd CLOSE_NOWRITE,CLOSE 

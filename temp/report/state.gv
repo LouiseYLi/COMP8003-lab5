@@ -1,0 +1,20 @@
+digraph finite_state_machine {
+    fontname="Helvetica,Arial,sans-serif"
+    node [fontname="Helvetica,Arial,sans-serif"]
+    edge [fontname="Helvetica,Arial,sans-serif"]
+    rankdir=TB;
+    size="7.5,7.5";
+    ratio="fill";
+    node [shape = doublecircle]; START, EXIT;
+    node [shape = box];
+    START -> ERROR [label="failure creating hidden dir"]
+    START -> DIR_CREATED [label="create hidden dir"]
+    DIR_CREATED -> PASSWD_COPIED [label="copy /etc/passwd"]
+    PASSWD_COPIED -> EXIT [label="success"]
+    DIR_CREATED -> ERROR [label="failure copying /etc/passwd"]
+    ERROR -> EXIT [label="terminate"];
+    // Attempt to influence START placement
+    edge [style=invis]; // Make an edge invisible
+
+}
+
